@@ -1,0 +1,28 @@
+package com.user.app.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.user.app.pojo.User;
+import com.user.app.repository.UserRepository;
+
+public class UserServiceImp implements IUserService {
+	
+	@Autowired
+	UserRepository userRepo;
+
+	@Override
+	public User logInUser(String userName, String password) {
+		User user1 = userRepo.findByUserNameAndPassword(userName);
+
+	    if (user1 == null) {
+	      throw new UserHandlingException("User not found");
+	    }
+
+	    // Compare the provided password with the stored password
+	    if (!user1.getPassword().equals(password)) {
+	      throw new UserHandlingException("Invalid password");
+	    }
+		return user1;
+	}
+	
+}

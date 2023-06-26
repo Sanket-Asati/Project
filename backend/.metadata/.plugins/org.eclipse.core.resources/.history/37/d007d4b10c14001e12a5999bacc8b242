@@ -1,0 +1,5 @@
+package com.user.app.services;
+
+public class UserServiceImp implements IUserService {
+	
+}

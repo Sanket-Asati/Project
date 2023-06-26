@@ -1,0 +1,7 @@
+package com.user.app.dto;
+
+public class LoginRequestDTO {
+	
+	private String userName;
+	private String password;
+}

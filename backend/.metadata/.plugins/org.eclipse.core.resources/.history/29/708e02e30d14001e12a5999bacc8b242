@@ -1,0 +1,5 @@
+package com.user.app.dto;
+
+public class SignupRequestDTO {
+
+}

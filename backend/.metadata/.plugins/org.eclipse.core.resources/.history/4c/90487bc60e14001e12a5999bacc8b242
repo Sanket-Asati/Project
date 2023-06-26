@@ -1,0 +1,9 @@
+package com.user.app.repository;
+
+import com.user.app.pojo.User;
+
+public interface UserRepository {
+
+	User findByUserNameAndPassword(String userName, String password);
+	
+}

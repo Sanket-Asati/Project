@@ -1,0 +1,25 @@
+package com.user.app.services;
+
+import com.user.app.pojo.User;
+import com.user.app.repository.UserRepository;
+
+public class UserServiceImp implements IUserService {
+	
+	UserRepository useRepo;
+
+	@Override
+	public User logInUser(String userName, String password) {
+		User user1 = userRepo.findByUserEmail(userEmail);
+
+	    if (user1 == null) {
+	      throw new UserHandlingException("User not found");
+	    }
+
+	    // Compare the provided password with the stored password
+	    if (!user1.getUserPassword().equals(userPassword)) {
+	      throw new UserHandlingException("Invalid password");
+	    }
+		return user1;
+	}
+	
+}
