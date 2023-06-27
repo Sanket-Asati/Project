@@ -25,6 +25,7 @@ public class User {
 	private LocalDate date;
 	private String address;
 	private String pincode;
+	private Boolean Validated;
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -114,12 +115,23 @@ public class User {
 	public void setPincode(String pincode) {
 		this.pincode = pincode;
 	}
+	
+	
+	public Boolean getValidated() {
+		return Validated;
+	}
+	public void setValidated(Boolean validated) {
+		Validated = validated;
+	}
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", userName=" + userName + ", password=" + password + ", fname=" + fname + ", lname="
 				+ lname + ", mobileNumber=" + mobileNumber + ", date=" + date + ", address=" + address + ", pincode="
-				+ pincode + "]";
+				+ pincode + ", Validated=" + Validated + "]";
 	}
+	
+	
+	
 	
 	
 

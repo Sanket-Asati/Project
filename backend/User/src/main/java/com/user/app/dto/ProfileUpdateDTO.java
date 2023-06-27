@@ -4,8 +4,8 @@ import java.time.LocalDate;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-public class SignupRequestDTO {
-	
+public class ProfileUpdateDTO {
+	private int id;
 	private String userName;
 	private String password;
 	private String fname;
@@ -15,13 +15,14 @@ public class SignupRequestDTO {
 	private LocalDate date;
 	private String address;
 	private String pincode;
-	public SignupRequestDTO() {
+	public ProfileUpdateDTO() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	public SignupRequestDTO(String userName, String password, String fname, String lname, String mobileNumber, LocalDate date,
+		// TODO Auto-generated constructor stub
+	public ProfileUpdateDTO(int id,String userName, String password, String fname, String lname, String mobileNumber, LocalDate date,
 			String address, String pincode) {
 		super();
+		this.id=id;
 		this.userName = userName;
 		this.password = password;
 		this.fname = fname;
@@ -30,6 +31,14 @@ public class SignupRequestDTO {
 		this.date = date;
 		this.address = address;
 		this.pincode=pincode;
+	}
+	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getUserName() {
 		return userName;
@@ -80,9 +89,6 @@ public class SignupRequestDTO {
 	public void setPincode(String pincode) {
 		this.pincode = pincode;
 	}
-	
-	
-	
 	@Override
 	public String toString() {
 		return "SignupRequestDTO [userName=" + userName + ", password=" + password + ", fname=" + fname + ", lname="
@@ -91,5 +97,5 @@ public class SignupRequestDTO {
 	}
 	
 	
-	
+
 }

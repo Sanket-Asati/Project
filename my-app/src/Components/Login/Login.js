@@ -41,13 +41,23 @@ const Login = ({ setUserState }) => {
     setFormErrors(validateForm(user));
     setIsSubmit(true);
   };
+  const adminloginHandler = (e) => {
+    e.preventDefault();
+    if(user.userName==="admin" && user.password==="admin"){
+      navigate("/admin", { replace: true });
+    }
+    else{
+      alert("check user name and password");
+    }
+   
+  };
 
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmit) {
       console.log(user);
       axios.post("http://localhost:9191/user/login", user).then((res) => {
         //alert(res.data.message);
-        console.table(res.data)
+        console.table(res.data);
         setUserState(res.data);
         navigate("/profile", { replace: true });
       });
@@ -81,6 +91,9 @@ const Login = ({ setUserState }) => {
         </button>
       </form>
       <NavLink to="/signup">Not yet registered? Register Now</NavLink>
+      <button className={basestyle.button_common} onClick={adminloginHandler}>
+          Admin Login
+        </button>
     </div>
   );
 };
